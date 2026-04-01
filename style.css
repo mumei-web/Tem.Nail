@@ -274,3 +274,10 @@ footer {
 #staff .spa-card img {
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
+#staff h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
