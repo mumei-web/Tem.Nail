@@ -260,15 +260,16 @@ footer {
 }
 
 /* スマホ：縦並び中央 */
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   #staff .section-inner {
+    gap: 80px;
     flex-direction: column;
     align-items: center;
   }
 
   .staff-card {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
   }
 }
 #staff .spa-card img {
