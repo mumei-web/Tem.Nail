@@ -351,37 +351,54 @@ footer {
     max-width: 300px;
   }
 }
-/* 背景画像 */
+.reserve-section {
+  position: relative;
+  text-align: center;
+  padding: 80px 20px;
+  overflow: hidden;
+  color: #fff; /* 見出し文字を白に */
+}
+
+.reserve-section h2 {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+
 .reserve-section .reserve-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  object-fit: cover;
+  z-index: 0;
   height: 100%;
-  object-fit: cover; /* セクション全体にフィット */
-  z-index: 0;        /* ボタンより後ろに表示 */
 }
 
-/* section自体は相対位置 */
-.reserve-section {
-  position: relative;
-  text-align: center;
-  padding: 80px 20px;
-  overflow: hidden;  /* はみ出す部分を隠す */
+/* PC高さ調整 */
+@media (min-width: 769px) {
+  .reserve-section {
+    height: 400px; /* PCで大きすぎない */
+  }
 }
 
-/* ボタン前面に表示 */
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .reserve-section {
+    height: auto;
+    padding: 60px 20px;
+  }
+}
+
 .reserve-section .reserve-btn {
   position: relative;
   z-index: 2;
-}
-
-/* 既存のボタンデザインはそのまま適用可 */
-
-.reserve-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35); /* ボタンや文字を見やすくするオーバーレイ */
-  z-index: 1;
+  display: inline-block;
+  background: linear-gradient(135deg,#6b8e23,#4f6f52);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
 }
