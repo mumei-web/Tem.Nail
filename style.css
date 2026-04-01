@@ -1,0 +1,231 @@
+/* ===== 基本設定 ===== */
+:root {
+  --main: #4f6f52;
+  --accent: #a3b18a;
+  --sub: #f5f5dc;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #333;
+  line-height: 1.7;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #f5f5dc, #e9f0e5);
+}
+
+/* ===== ヒーロー ===== */
+.hero {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f5f5dc;
+  text-align: center;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+}
+
+/* ===== ナビ ===== */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+  background: rgba(255,255,255,0.95);
+}
+
+nav a {
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: #f5f5f5;
+  color: #333;
+}
+
+nav a:hover {
+  background: var(--main);
+  color: #fff;
+}
+
+/* ===== セクション（重要） ===== */
+section {
+  width: 100%;
+  padding: 80px 20px;
+}
+
+/* 中身（これが本体） */
+.section-inner {
+  max-width: 1400px;   /* ←広げる */
+  margin: 0 auto;
+  padding: 40px 60px;
+
+  background: rgba(255,255,255,0.45);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+}
+
+/* ===== SERVICE ===== */
+.about-flex {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: center;
+}
+
+.about-flex img {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+#about ul {
+  list-style: none;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#about li {
+  display: inline-block;
+  margin: 10px;
+}
+
+/* ===== ABOUT ===== */
+#point {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-images {
+  display: flex;
+  gap: 20px;
+}
+
+.about-images img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* ===== GALLERY ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: .3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== STAFF ===== */
+#staff .spa-card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+/* ===== ボタン ===== */
+.reserve-btn {
+  display: inline-block;
+  background: linear-gradient(135deg,#6b8e23,#4f6f52);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 30px;
+}
+
+/* ===== Instagram ===== */
+#instagram .insta-btn {
+  display: block;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: linear-gradient(135deg,#6b8e23,#4f6f52);
+  color: #fff;
+  text-align: center;
+  border-radius: 30px;
+}
+
+/* ===== MAP ===== */
+.map iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+}
+
+/* ===== フッター ===== */
+footer {
+  background: var(--main);
+  color: #fff;
+  text-align: center;
+  padding: 30px;
+}
+
+/* ===== スマホ ===== */
+@media (max-width: 768px) {
+
+  .about-flex,
+  #point {
+    flex-direction: column;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .section-inner {
+    padding: 20px;
+  }
+}
+.section-inner h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
