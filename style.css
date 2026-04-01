@@ -354,8 +354,11 @@ footer {
 .reserve-section {
   position: relative;
   text-align: center;
-  padding: 80px 20px; /* 上下の余白 */
-  background: url('imagesTem/Tem7.jpg') center/cover no-repeat;
+  padding: 80px 20px;
+  background-image: url('imagesTem/Tem7.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .reserve-section::before {
