@@ -351,15 +351,32 @@ footer {
     max-width: 300px;
   }
 }
+/* 背景画像 */
+.reserve-section .reserve-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* セクション全体にフィット */
+  z-index: 0;        /* ボタンより後ろに表示 */
+}
+
+/* section自体は相対位置 */
 .reserve-section {
   position: relative;
   text-align: center;
   padding: 80px 20px;
-  background-image: url('imagesTem/Tem7.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  overflow: hidden;  /* はみ出す部分を隠す */
 }
+
+/* ボタン前面に表示 */
+.reserve-section .reserve-btn {
+  position: relative;
+  z-index: 2;
+}
+
+/* 既存のボタンデザインはそのまま適用可 */
 
 .reserve-section::before {
   content: '';
@@ -367,9 +384,4 @@ footer {
   inset: 0;
   background: rgba(0,0,0,0.35); /* ボタンや文字を見やすくするオーバーレイ */
   z-index: 1;
-}
-
-.reserve-section .reserve-btn {
-  position: relative;
-  z-index: 2; /* ボタンを前面に表示 */
 }
