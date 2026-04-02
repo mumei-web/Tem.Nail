@@ -441,3 +441,11 @@ footer {
   color: #fff;
   text-decoration: none;
 }
+
+.address {
+  color: #fff;
+}
+#about p,
+#about li {
+  color: #fff;
+}
