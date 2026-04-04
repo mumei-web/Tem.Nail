@@ -25,7 +25,7 @@
         <img src="imagesTem/Tem2.jpg" alt="">
       </div>
       <div class="hero-slide">
-        <img src="imagesTem/Tem3.jpg" alt="">
+        <img src="imagesTem/Tem13.jpg" alt="">
       </div>
     </div>
  
@@ -37,7 +37,7 @@
         60分で理想の指先へ
         <span>Tem Nails</span>
       </h1>
-      <a href="　" class="hero-btn" target="_blank">今すぐ予約する</a>
+      <a href="https://tol-app.jp/s/2vein6014q2k5wwbvw0y" class="hero-btn" target="_blank">今すぐ予約する</a>
     </div>
  
     <!-- スライドドット -->
@@ -70,7 +70,7 @@
       <!-- 画像：2枚重ね -->
       <div class="stacked-images">
         <img src="imagesTem/Tem10.jpg" alt="service main" class="img-back">
-        <img src="imagesTem/Tem5.jpg" alt="service sub" class="img-front">
+        <img src="imagesTem/Tem11.jpg" alt="service sub" class="img-front">
       </div>
  
       <div class="about-text">
@@ -120,17 +120,29 @@
     <div class="section-label">03</div>
     <h2 class="section-title">GALLERY</h2>
     <p class="section-sub">施術事例</p>
+  </div>
  
-    <div class="gallery">
-      <div class="gallery-item large"><img src="imagesTem/Tem4.jpg" alt=""></div>
-      <div class="gallery-item"><img src="imagesTem/Tem6.jpg" alt=""></div>
-      <div class="gallery-item"><img src="imagesTem/Tem24.jpg" alt=""></div>
-      <div class="gallery-item"><img src="imagesTem/Tem22.jpg" alt=""></div>
-      <div class="gallery-item large"><img src="imagesTem/Tem20.jpg" alt=""></div>
-      <div class="gallery-item"><img src="imagesTem/Tem19.jpg" alt=""></div>
-      <div class="gallery-item"><img src="imagesTem/Tem18.jpg" alt=""></div>
-      <div class="gallery-item"><img src="imagesTem/Tem17.jpg" alt=""></div>
-      <div class="gallery-item"><img src="imagesTem/Tem16.jpg" alt=""></div>
+  <!-- スクロールエリアは section-inner の外（フル幅） -->
+  <div class="gallery-scroll-wrap">
+    <div class="gallery-scroll">
+      <div class="gallery-scroll-item">
+        <img src="imagesTem/Tem24.jpg" alt="ブラウンアーモンド">
+      </div>
+      <div class="gallery-scroll-item">
+        <img src="imagesTem/Tem22.jpg" alt="フラワーアート">
+      </div>
+      <div class="gallery-scroll-item">
+        <img src="imagesTem/Tem3.jpg" alt="ホワイトフラワー">
+      </div>
+      <div class="gallery-scroll-item">
+        <img src="imagesTem/Tem12.jpg" alt="グリーン＋ブラック">
+      </div>
+      <div class="gallery-scroll-item">
+        <img src="imagesTem/Tem15.jpg" alt="ブラウン＋ブルー">
+      </div>
+      <div class="gallery-scroll-item">
+        <img src="imagesTem/Tem17.jpg" alt="カラーチップ">
+      </div>
     </div>
   </div>
 </section>
@@ -260,6 +272,27 @@ function nextSlide() {
 }
  
 setInterval(nextSlide, 4000);
+ 
+// ===== ギャラリー マウスドラッグスクロール =====
+const galleryWrap = document.querySelector('.gallery-scroll-wrap');
+let isDown = false;
+let startX;
+let scrollLeft;
+ 
+galleryWrap.addEventListener('mousedown', (e) => {
+  isDown = true;
+  startX = e.pageX - galleryWrap.offsetLeft;
+  scrollLeft = galleryWrap.scrollLeft;
+});
+galleryWrap.addEventListener('mouseleave', () => { isDown = false; });
+galleryWrap.addEventListener('mouseup', () => { isDown = false; });
+galleryWrap.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - galleryWrap.offsetLeft;
+  const walk = (x - startX) * 1.5;
+  galleryWrap.scrollLeft = scrollLeft - walk;
+});
 </script>
  
 </body>
