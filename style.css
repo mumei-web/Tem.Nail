@@ -13,14 +13,14 @@
   --shadow:       0 12px 40px rgba(60,80,40,0.15);
   --radius:       16px;
 }
- 
+
 /* ===== リセット ===== */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
- 
+
 /* ===== ベース ===== */
 body {
   font-family: 'Noto Sans JP', sans-serif;
@@ -30,7 +30,7 @@ body {
   overflow-x: hidden;
   background: var(--cream);
 }
- 
+
 /* ===== タイポグラフィ共通 ===== */
 .section-label {
   font-family: 'Josefin Sans', sans-serif;
@@ -42,7 +42,7 @@ body {
   margin-bottom: 8px;
 }
 .section-label.light { color: rgba(255,255,255,0.5); }
- 
+
 .section-title {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
@@ -52,7 +52,7 @@ body {
   line-height: 1.1;
 }
 .section-title.light { color: var(--white); }
- 
+
 .section-sub {
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 200;
@@ -63,18 +63,18 @@ body {
   margin-bottom: 50px;
 }
 .section-sub.light { color: rgba(255,255,255,0.6); }
- 
+
 /* ===== セクション共通 ===== */
 section {
   width: 100%;
   padding: 100px 20px;
 }
- 
+
 .section-inner {
   max-width: 1200px;
   margin: 0 auto;
 }
- 
+
 /* ===== HERO ===== */
 .hero {
   position: relative;
@@ -82,12 +82,12 @@ section {
   min-height: 600px;
   overflow: hidden;
 }
- 
+
 .hero-slides {
   position: absolute;
   inset: 0;
 }
- 
+
 .hero-slide {
   position: absolute;
   inset: 0;
@@ -95,13 +95,13 @@ section {
   transition: opacity 1.2s ease;
 }
 .hero-slide.active { opacity: 1; }
- 
+
 .hero-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
- 
+
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -113,18 +113,18 @@ section {
   );
   z-index: 1;
 }
- 
+
 .hero-text {
   position: absolute;
   z-index: 2;
-  bottom: 120px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   text-align: center;
   color: var(--white);
   width: 90%;
 }
- 
+
 .hero-sub {
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 200;
@@ -133,7 +133,7 @@ section {
   opacity: 0.85;
   margin-bottom: 16px;
 }
- 
+
 .hero-title {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
@@ -142,15 +142,27 @@ section {
   text-shadow: 0 4px 20px rgba(0,0,0,0.3);
   margin-bottom: 32px;
 }
- 
+
 .hero-title span {
   display: block;
-  font-style: italic;
+}
+
+.hero-title-en {
+  font-style: normal;
   font-size: 0.65em;
   letter-spacing: 10px;
-  opacity: 0.9;
+  opacity: 0.95;
 }
- 
+
+.hero-title-ja {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 200;
+  font-size: 0.28em;
+  letter-spacing: 8px;
+  opacity: 0.75;
+  margin-top: 4px;
+}
+
 .hero-btn {
   display: inline-block;
   padding: 14px 40px;
@@ -170,7 +182,7 @@ section {
   background: var(--green-main);
   border-color: var(--green-main);
 }
- 
+
 .hero-dots {
   position: absolute;
   bottom: 40px;
@@ -180,7 +192,7 @@ section {
   display: flex;
   gap: 10px;
 }
- 
+
 .dot {
   width: 6px;
   height: 6px;
@@ -194,7 +206,7 @@ section {
   border-radius: 3px;
   background: var(--white);
 }
- 
+
 /* ===== NAV ===== */
 nav {
   display: flex;
@@ -209,7 +221,7 @@ nav {
   z-index: 100;
   box-shadow: 0 2px 20px rgba(60,80,40,0.08);
 }
- 
+
 nav a {
   text-decoration: none;
   padding: 8px 20px;
@@ -226,12 +238,12 @@ nav a:hover {
   border-color: var(--green-main);
   color: var(--green-main);
 }
- 
+
 /* ===== SERVICE ===== */
 #about {
   background: var(--white);
 }
- 
+
 .about-flex {
   display: flex;
   align-items: center;
@@ -239,15 +251,28 @@ nav a:hover {
   justify-content: center;
   flex-wrap: wrap;
 }
- 
-/* 2枚重ね画像 */
+
+/* 2枚重ね画像 → 1枚＋背景デコ */
 .stacked-images {
   position: relative;
   width: 380px;
-  height: 460px;
+  height: 420px;
   flex-shrink: 0;
 }
- 
+
+/* 背景の影ブロック（ずらした四角） */
+.stacked-images::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 300px;
+  height: 380px;
+  background: var(--green-light);
+  opacity: 0.35;
+  z-index: 0;
+}
+
 .img-back {
   position: absolute;
   top: 0;
@@ -257,23 +282,18 @@ nav a:hover {
   object-fit: cover;
   border-radius: 0;
   box-shadow: 8px 16px 40px rgba(40,60,30,0.28), 2px 4px 12px rgba(40,60,30,0.15);
+  z-index: 1;
 }
- 
+
+/* img-front は非表示 */
 .img-front {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 220px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 0;
-  box-shadow: -6px 20px 50px rgba(40,60,30,0.4), 0 8px 24px rgba(40,60,30,0.25);
+  display: none;
 }
- 
+
 .about-text {
   max-width: 440px;
 }
- 
+
 .about-lead {
   font-family: 'Cormorant Garamond', serif;
   font-size: 22px;
@@ -282,11 +302,11 @@ nav a:hover {
   color: var(--green-dark);
   margin-bottom: 30px;
 }
- 
+
 .feature-list {
   list-style: none;
 }
- 
+
 .feature-list li {
   padding: 12px 0;
   border-bottom: 1px solid var(--green-pale);
@@ -297,17 +317,17 @@ nav a:hover {
   align-items: center;
   gap: 10px;
 }
- 
+
 .feature-icon {
   color: var(--green-light);
   font-size: 10px;
 }
- 
+
 /* ===== ABOUT ===== */
 #point {
   background: var(--green-pale);
 }
- 
+
 .about-content {
   display: flex;
   align-items: center;
@@ -315,14 +335,14 @@ nav a:hover {
   justify-content: center;
   flex-wrap: wrap;
 }
- 
+
 .about-body {
   color: var(--text-mid);
   font-size: 14px;
   line-height: 2;
   margin-top: 16px;
 }
- 
+
 /* 2枚ずらし重ね */
 .overlap-images {
   position: relative;
@@ -330,7 +350,7 @@ nav a:hover {
   height: 480px;
   flex-shrink: 0;
 }
- 
+
 .overlap-img-main {
   position: absolute;
   top: 0;
@@ -341,7 +361,7 @@ nav a:hover {
   border-radius: 0;
   box-shadow: 8px 16px 40px rgba(40,60,30,0.28), 2px 4px 12px rgba(40,60,30,0.15);
 }
- 
+
 .overlap-img-sub {
   position: absolute;
   bottom: 0;
@@ -352,13 +372,13 @@ nav a:hover {
   border-radius: 0;
   box-shadow: -4px 20px 50px rgba(40,60,30,0.4), 0 8px 24px rgba(40,60,30,0.25);
 }
- 
+
 /* ===== GALLERY ===== */
 #gallery {
   background: var(--white);
   padding-bottom: 0;
 }
- 
+
 .gallery-scroll-wrap {
   width: 100%;
   overflow-x: auto;
@@ -373,13 +393,13 @@ nav a:hover {
 .gallery-scroll-wrap:active {
   cursor: grabbing;
 }
- 
+
 .gallery-scroll {
   display: flex;
   gap: 16px;
   width: max-content;
 }
- 
+
 .gallery-scroll-item {
   position: relative;
   width: 300px;
@@ -389,11 +409,11 @@ nav a:hover {
   flex-shrink: 0;
   transition: transform 0.4s ease;
 }
- 
+
 .gallery-scroll-item:hover {
   transform: translateY(-8px);
 }
- 
+
 .gallery-scroll-item img {
   width: 100%;
   height: 100%;
@@ -401,11 +421,11 @@ nav a:hover {
   display: block;
   transition: transform 0.6s ease;
 }
- 
+
 .gallery-scroll-item:hover img {
   transform: scale(1.05);
 }
- 
+
 /* スマホ */
 @media (max-width: 768px) {
   .gallery-scroll-wrap {
@@ -417,28 +437,28 @@ nav a:hover {
     border-radius: 12px;
   }
 }
- 
+
 /* ===== INSTAGRAM ===== */
 .instagram-section {
   background: url('imagesTem/Tem8.jpg') center/cover no-repeat;
   position: relative;
   padding: 0;
 }
- 
+
 .instagram-section::before {
   content: '';
   position: absolute;
   inset: 0;
   background: rgba(20,40,20,0.55);
 }
- 
+
 .insta-inner {
   position: relative;
   z-index: 1;
   text-align: center;
   padding: 100px 20px;
 }
- 
+
 .insta-btn {
   display: inline-flex;
   align-items: center;
@@ -461,42 +481,42 @@ nav a:hover {
   background: var(--green-main);
   border-color: var(--green-main);
 }
- 
+
 /* ===== SCHEDULE ===== */
 #menu {
   background: var(--green-pale);
 }
- 
+
 .schedule-img img {
   width: 100%;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
- 
+
 /* ===== STAFF ===== */
 #staff {
   background: var(--white);
 }
- 
+
 .staff-grid {
   display: flex;
   justify-content: center;
   gap: 50px;
   flex-wrap: wrap;
 }
- 
+
 .staff-card {
   text-align: center;
   width: 240px;
 }
- 
+
 .staff-img-wrap {
   position: relative;
   width: 200px;
   height: 200px;
   margin: 0 auto 20px;
 }
- 
+
 .staff-img-wrap img {
   width: 180px;
   height: 180px;
@@ -506,7 +526,7 @@ nav a:hover {
   z-index: 1;
   box-shadow: 6px 12px 30px rgba(40,60,30,0.25), 0 4px 10px rgba(40,60,30,0.15);
 }
- 
+
 /* 画像の後ろにずれた装飾ボックス */
 .staff-img-deco {
   position: absolute;
@@ -519,7 +539,7 @@ nav a:hover {
   z-index: 0;
   box-shadow: 4px 8px 20px rgba(40,60,30,0.15);
 }
- 
+
 .staff-card h3 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 22px;
@@ -528,7 +548,7 @@ nav a:hover {
   margin-bottom: 4px;
   letter-spacing: 2px;
 }
- 
+
 .staff-role {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 100;
@@ -537,13 +557,13 @@ nav a:hover {
   color: var(--green-light);
   margin-bottom: 10px;
 }
- 
+
 .staff-comment {
   font-size: 13px;
   color: var(--text-light);
   line-height: 1.7;
 }
- 
+
 /* ===== RESERVE ===== */
 .reserve-section {
   position: relative;
@@ -554,7 +574,7 @@ nav a:hover {
   align-items: center;
   justify-content: center;
 }
- 
+
 .reserve-bg {
   position: absolute;
   inset: 0;
@@ -562,20 +582,20 @@ nav a:hover {
   height: 100%;
   object-fit: cover;
 }
- 
+
 .reserve-overlay {
   position: absolute;
   inset: 0;
   background: rgba(10,30,10,0.5);
 }
- 
+
 .reserve-content {
   position: relative;
   z-index: 1;
   text-align: center;
   padding: 80px 20px;
 }
- 
+
 .reserve-btn {
   display: inline-block;
   margin-top: 10px;
@@ -596,42 +616,55 @@ nav a:hover {
   background: var(--green-main);
   border-color: var(--green-main);
 }
- 
+
 /* ===== ACCESS ===== */
 #map {
   background: var(--green-pale);
 }
- 
+
 .access-flex {
   display: flex;
-  gap: 60px;
+  gap: 40px;
   align-items: flex-start;
   flex-wrap: wrap;
 }
- 
+
+.access-photo {
+  flex-shrink: 0;
+  width: 280px;
+}
+
+.access-photo img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
 .access-info {
   min-width: 200px;
 }
- 
+
 .address {
   font-size: 14px;
   line-height: 2.2;
   color: var(--text-mid);
   font-weight: 300;
 }
- 
+
 .map {
   flex: 1;
   min-width: 280px;
 }
- 
+
 .map iframe {
   width: 100%;
   height: 320px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
- 
+
 /* ===== FOOTER ===== */
 footer {
   background: var(--green-dark);
@@ -639,7 +672,7 @@ footer {
   text-align: center;
   padding: 50px 20px 30px;
 }
- 
+
 .footer-logo {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
@@ -648,19 +681,19 @@ footer {
   letter-spacing: 6px;
   margin-bottom: 12px;
 }
- 
+
 .footer-copy {
   font-size: 11px;
   letter-spacing: 2px;
   color: rgba(255,255,255,0.4);
 }
- 
+
 /* ===== レスポンシブ ===== */
 @media (max-width: 768px) {
   section { padding: 70px 16px; }
- 
+
   .hero-text { bottom: 100px; }
- 
+
   .about-flex,
   .about-content,
   .access-flex {
@@ -668,26 +701,26 @@ footer {
     align-items: center;
     gap: 40px;
   }
- 
+
   .stacked-images,
   .overlap-images {
-    width: 320px;
-    height: 380px;
+    width: 300px;
+    height: 360px;
   }
- 
-  .img-back { width: 250px; height: 300px; }
-  .img-front { width: 180px; height: 210px; }
-  .overlap-img-main { width: 260px; height: 320px; }
-  .overlap-img-sub { width: 180px; height: 210px; }
- 
+
+  .img-back { width: 260px; height: 320px; }
+  .stacked-images::before { width: 260px; height: 320px; }
+  .overlap-img-main { width: 240px; height: 300px; }
+  .overlap-img-sub { width: 160px; height: 190px; }
+
   .gallery {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 160px;
   }
   .gallery-item.large { grid-row: span 1; }
- 
+
   .staff-grid { gap: 40px; }
- 
+
   nav a {
     font-size: 11px;
     padding: 6px 14px;
