@@ -870,3 +870,21 @@ footer {
   display: none; /* これを追加して非表示にします */
   /* もしくは、このブロック全体を削除してもOKです */
 }
+.staff-comment {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.8;
+  text-align: center; /* 中央揃えにする */
+  display: block;
+  margin: 10px auto 0;
+  word-break: keep-all; /* 単語の途中での改行を防ぐ（ブラウザによります） */
+  overflow-wrap: break-word;
+}
+
+/* スマホでの微調整 */
+@media (max-width: 768px) {
+  .staff-comment {
+    font-size: 12px; /* スマホでは少しだけ小さくして、1行に収まりやすくする */
+    padding: 0 10px; /* 左右に少し余白を作る */
+  }
+}
