@@ -545,16 +545,19 @@ nav a:hover {
 
 .schedule-label {
   position: absolute;
-  bottom: 0;
+  top: 0;            /* bottom: 0; から変更 */
   left: 0;
   right: 0;
-  background: rgba(58,90,60,0.75);
+  background: rgba(58, 90, 60, 0.75);
   color: var(--white);
   text-align: center;
   padding: 10px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 16px;
   letter-spacing: 3px;
+  /* 画像の上の角の丸みに合わせるための設定（任意） */
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
 }
 
 .schedule-zoom {
@@ -861,4 +864,9 @@ footer {
     padding: 6px 14px;
     letter-spacing: 2px;
   }
+}
+/* ===== STAFF内の装飾ボックスを非表示にする ===== */
+.staff-img-deco {
+  display: none; /* これを追加して非表示にします */
+  /* もしくは、このブロック全体を削除してもOKです */
 }
