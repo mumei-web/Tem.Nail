@@ -38,7 +38,7 @@
         <span class="hero-title-en">Tem Nails</span>
         <span class="hero-title-ja">テンネイル</span>
       </h1>
-      <a href="https://l.instagram.com/?u=https%3A%2F%2Fline.me%2Fti%2Fp%2FDaNY7QC4sG%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnMRxjFEK4mz5YS70OgDVzXoUDc-tCCu09a_kgqOJLC31axWKwRshoqA_-zyQ_aem_3F9-SfXxYAuG9eRMd9T7Yw&e=AT7ASARJiu_INy7Tokf5OIFsFEP8lG0EpGR4ql3ElK8qxMtmRXy8jPy2LSX9D-TZ_xSBTPnlvrMXpkVjPYG6d2ybtzpz7huOQDxLHp1YnA" class="hero-btn" target="_blank">今すぐ予約する</a>
+      <a href="https://tol-app.jp/s/2vein6014q2k5wwbvw0y" class="hero-btn" target="_blank">今すぐ予約する</a>
     </div>
 
     <!-- スライドドット -->
@@ -55,7 +55,7 @@
     <a href="menu.html">MENU</a>
     <a href="#gallery">GALLERY</a>
     <a href="#staff">STAFF</a>
-    <a href="https://l.instagram.com/?u=https%3A%2F%2Fline.me%2Fti%2Fp%2FDaNY7QC4sG%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnMRxjFEK4mz5YS70OgDVzXoUDc-tCCu09a_kgqOJLC31axWKwRshoqA_-zyQ_aem_3F9-SfXxYAuG9eRMd9T7Yw&e=AT7ASARJiu_INy7Tokf5OIFsFEP8lG0EpGR4ql3ElK8qxMtmRXy8jPy2LSX9D-TZ_xSBTPnlvrMXpkVjPYG6d2ybtzpz7huOQDxLHp1YnA" target="_blank">RESERVE</a>
+    <a href="reservation.html" target="_blank">RESERVE</a>
     <a href="contact.html">CONTACT</a>
   </nav>
 </header>
@@ -168,11 +168,26 @@
     <div class="section-label">05</div>
     <h2 class="section-title">SCHEDULE</h2>
     <p class="section-sub">営業スケジュール</p>
-    <div class="schedule-img">
-      <img src="imagesTem/Tem.jpg" alt="schedule">
+    <div class="schedule-grid">
+      <div class="schedule-item" onclick="openLightbox('imagesTem/TemT04.jpg')">
+        <img src="imagesTem/TemT04.jpg" alt="天間スケジュール">
+        <div class="schedule-label">天間 ゆり</div>
+        <div class="schedule-zoom"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="schedule-item" onclick="openLightbox('imagesTem/TemN04.jpg')">
+        <img src="imagesTem/TemN04.jpg" alt="Narumiスケジュール">
+        <div class="schedule-label">Narumi</div>
+        <div class="schedule-zoom"><i class="fas fa-expand"></i></div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- ライトボックス -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-close" onclick="closeLightbox()">✕</div>
+  <img src="" alt="" id="lightbox-img">
+</div>
 
 <!-- ===== STAFF ===== -->
 <section id="staff">
@@ -184,7 +199,7 @@
     <div class="staff-grid">
       <div class="staff-card">
         <div class="staff-img-wrap">
-          <img src="imagesTem/Tem.jpg" alt="天間ゆり">
+          <img src="imagesTem/Tem25.jpg" alt="天間ゆり">
           <div class="staff-img-deco"></div>
         </div>
         <h3>天間 ゆり</h3>
@@ -214,7 +229,7 @@
     <div class="section-label light">07</div>
     <h2 class="section-title light">RESERVE</h2>
     <p class="section-sub light">ご予約はこちら</p>
-    <a href="https://l.instagram.com/?u=https%3A%2F%2Fline.me%2Fti%2Fp%2FDaNY7QC4sG%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnMRxjFEK4mz5YS70OgDVzXoUDc-tCCu09a_kgqOJLC31axWKwRshoqA_-zyQ_aem_3F9-SfXxYAuG9eRMd9T7Yw&e=AT7ASARJiu_INy7Tokf5OIFsFEP8lG0EpGR4ql3ElK8qxMtmRXy8jPy2LSX9D-TZ_xSBTPnlvrMXpkVjPYG6d2ybtzpz7huOQDxLHp1YnA" class="reserve-btn" target="_blank">今すぐ予約する</a>
+    <a href="reservation.html" class="reserve-btn" target="_blank">今すぐ予約する</a>
   </div>
 </section>
 
@@ -233,7 +248,7 @@
       <div class="access-info">
         <p class="address">
           〒039-1165<br>
-          青森県八戸市石堂4丁目13-5 中村住宅10号室
+          青森県八戸市石堂4丁目13-5 10号室
         </p>
       </div>
       <div class="map">
@@ -251,6 +266,17 @@
 </footer>
 
 <script>
+// ===== ライトボックス =====
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
 // ===== スライドショー =====
 let currentSlide = 0;
 const slides = document.querySelectorAll('.hero-slide');
