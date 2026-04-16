@@ -168,18 +168,59 @@
     <div class="section-label">05</div>
     <h2 class="section-title">SCHEDULE</h2>
     <p class="section-sub">営業スケジュール</p>
-    <div class="schedule-grid">
-      <div class="schedule-item" onclick="openLightbox('imagesTem/TemT04.jpg')">
-        <img src="imagesTem/TemT04.jpg" alt="天間スケジュール">
-        <div class="schedule-label">天間 ゆり</div>
-        <div class="schedule-zoom"><i class="fas fa-expand"></i></div>
-      </div>
-      <div class="schedule-item" onclick="openLightbox('imagesTem/TemN04.jpg')">
-        <img src="imagesTem/TemN04.jpg" alt="Narumiスケジュール">
-        <div class="schedule-label">Narumi</div>
-        <div class="schedule-zoom"><i class="fas fa-expand"></i></div>
+
+    <!-- 月ナビゲーション -->
+    <div class="schedule-nav">
+      <button class="schedule-nav-btn" id="sched-prev" onclick="prevMonth()">&#8249;</button>
+      <span class="schedule-month-label" id="schedule-month-label">4月</span>
+      <button class="schedule-nav-btn" id="sched-next" onclick="nextMonth()">&#8250;</button>
+    </div>
+
+    <!-- スライダー本体 -->
+    <div class="schedule-slider-wrap">
+      <div class="schedule-slider" id="schedule-slider">
+
+        <!-- ▼ 1ヶ月目（画像名は実際のファイルに合わせてください） -->
+        <div class="schedule-slide">
+          <div class="schedule-grid">
+            <div class="schedule-item" onclick="openLightbox('imagesTem/TemT04.jpg')">
+              <img src="imagesTem/TemT04.jpg" alt="天間スケジュール 4月">
+              <div class="schedule-label">天間 ゆり</div>
+              <div class="schedule-zoom"><i class="fas fa-expand"></i></div>
+            </div>
+            <div class="schedule-item" onclick="openLightbox('imagesTem/TemN04.jpg')">
+              <img src="imagesTem/TemN04.jpg" alt="Narumi スケジュール 4月">
+              <div class="schedule-label">Narumi</div>
+              <div class="schedule-zoom"><i class="fas fa-expand"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ▼ 2ヶ月目（画像名は実際のファイルに合わせてください） -->
+        <div class="schedule-slide">
+          <div class="schedule-grid">
+            <div class="schedule-item" onclick="openLightbox('imagesTem/TemT05.jpg')">
+              <img src="imagesTem/TemT05.jpg" alt="天間スケジュール 5月">
+              <div class="schedule-label">天間 ゆり</div>
+              <div class="schedule-zoom"><i class="fas fa-expand"></i></div>
+            </div>
+            <div class="schedule-item" onclick="openLightbox('imagesTem/TemN05.jpg')">
+              <img src="imagesTem/TemN05.jpg" alt="Narumi スケジュール 5月">
+              <div class="schedule-label">Narumi</div>
+              <div class="schedule-zoom"><i class="fas fa-expand"></i></div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
+
+    <!-- ドットインジケーター -->
+    <div class="schedule-dots">
+      <span class="schedule-dot active" onclick="goToMonth(0)"></span>
+      <span class="schedule-dot" onclick="goToMonth(1)"></span>
+    </div>
+
   </div>
 </section>
 
