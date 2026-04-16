@@ -888,3 +888,85 @@ footer {
     padding: 0 10px; /* 左右に少し余白を作る */
   }
 }
+/* ===== SCHEDULE SLIDER ===== */
+.schedule-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.schedule-month-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--green-dark);
+  letter-spacing: 4px;
+  min-width: 60px;
+  text-align: center;
+}
+
+.schedule-nav-btn {
+  background: none;
+  border: 1px solid var(--green-light);
+  color: var(--green-dark);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.schedule-nav-btn:hover {
+  background: var(--green-main);
+  border-color: var(--green-main);
+  color: var(--white);
+}
+.schedule-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+.schedule-slider-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+
+.schedule-slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.schedule-slide {
+  min-width: 100%;
+}
+
+/* ドット */
+.schedule-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.schedule-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green-light);
+  opacity: 0.4;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.schedule-dot.active {
+  opacity: 1;
+  background: var(--green-main);
+  width: 24px;
+  border-radius: 4px;
+}
