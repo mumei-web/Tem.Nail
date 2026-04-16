@@ -323,12 +323,10 @@ function closeLightbox() {
   document.getElementById('lightbox').classList.remove('active');
   document.body.style.overflow = '';
 }
-
 // ===== スライドショー =====
 let currentSlide = 0;
 const slides = document.querySelectorAll('.hero-slide');
 const dots = document.querySelectorAll('.dot');
-
 function goToSlide(n) {
   slides[currentSlide].classList.remove('active');
   dots[currentSlide].classList.remove('active');
@@ -336,19 +334,15 @@ function goToSlide(n) {
   slides[currentSlide].classList.add('active');
   dots[currentSlide].classList.add('active');
 }
-
 function nextSlide() {
   goToSlide((currentSlide + 1) % slides.length);
 }
-
 setInterval(nextSlide, 4000);
-
 // ===== ギャラリー マウスドラッグスクロール =====
 const galleryWrap = document.querySelector('.gallery-scroll-wrap');
 let isDown = false;
 let startX;
 let scrollLeft;
-
 galleryWrap.addEventListener('mousedown', (e) => {
   isDown = true;
   startX = e.pageX - galleryWrap.offsetLeft;
@@ -363,6 +357,30 @@ galleryWrap.addEventListener('mousemove', (e) => {
   const walk = (x - startX) * 1.5;
   galleryWrap.scrollLeft = scrollLeft - walk;
 });
+// ===== スケジュールスライダー =====
+const scheduleMonths = ['4月', '5月'];
+let currentMonth = 0;
+function updateScheduleSlider() {
+  const slider = document.getElementById('schedule-slider');
+  slider.style.transform = `translateX(-${currentMonth * 100}%)`;
+  document.getElementById('schedule-month-label').textContent = scheduleMonths[currentMonth];
+  document.querySelectorAll('.schedule-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === currentMonth);
+  });
+  document.getElementById('sched-prev').disabled = currentMonth === 0;
+  document.getElementById('sched-next').disabled = currentMonth === scheduleMonths.length - 1;
+}
+function prevMonth() {
+  if (currentMonth > 0) { currentMonth--; updateScheduleSlider(); }
+}
+function nextMonth() {
+  if (currentMonth < scheduleMonths.length - 1) { currentMonth++; updateScheduleSlider(); }
+}
+function goToMonth(n) {
+  currentMonth = n;
+  updateScheduleSlider();
+}
+updateScheduleSlider();
 </script>
 
 </body>
