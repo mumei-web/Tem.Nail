@@ -970,3 +970,26 @@ footer {
   width: 24px;
   border-radius: 4px;
 }
+/* 文字サイズの調整用に追加 */
+
+.section-sub {
+  font-size: 14px !important;
+}
+
+.about-body {
+  font-size: 16px !important;
+}
+
+.about-detail p {
+  font-size: 15px !important;
+}
+
+.staff-comment {
+  font-size: 15px !important;
+}
+
+@media (max-width: 768px) {
+  .staff-comment {
+    font-size: 14px !important;
+  }
+}
